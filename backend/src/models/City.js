@@ -17,7 +17,7 @@ import mongoose from "mongoose"
     }
   },
   {
-    timestamps:true
+   timestamps: true
   }
 )
  const City = mongoose.model("City",citySchema)
