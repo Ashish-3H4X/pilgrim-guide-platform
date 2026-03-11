@@ -5,7 +5,7 @@ import mongoose from "mongoose"
       type :String,
       require:true
     },
-    sate:{
+    state:{
       type:String,
       require:true
     },
