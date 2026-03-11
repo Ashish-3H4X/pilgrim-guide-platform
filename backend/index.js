@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import connectDB from "./src/config/db.js";
 import cityRoutes from "./src/routes/cityRoutes.js"
 import templeRoutes from "./src/routes/templeRoutes.js";
+import placeRoutes from "./src/routes/placeRoutes.js";
+
 dotenv.config();
 
 const app = express();
@@ -21,6 +23,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/cities", cityRoutes);
 app.use("/api/temples", templeRoutes);
+app.use("/api/places", placeRoutes);
+
+
 
 const PORT = process.env.PORT || 5000;
 

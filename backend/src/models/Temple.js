@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const TempleSchema  = new mongoose.Schem({
+const TempleSchema  = new mongoose.Schema ({
     name:{
       type:String,
       require:true
