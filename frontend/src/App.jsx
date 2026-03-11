@@ -1,15 +1,22 @@
-import CitiesPage from "./pages/CitiesPage.jsx";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import CitiesPage from "./pages/CitiesPage";
+import CityDetails from "./pages/CityDetails";
 
 function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
 
-      <h1 className="text-4xl font-bold text-center py-6">
-        Pilgrim Guide
-      </h1>
+      <Navbar />
 
-      <CitiesPage />
+      <Routes>
+
+        <Route path="/" element={<CitiesPage />} />
+
+        <Route path="/city/:id" element={<CityDetails />} />
+
+      </Routes>
 
     </div>
   );
