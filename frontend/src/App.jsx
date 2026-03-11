@@ -1,13 +1,19 @@
-
+import CitiesPage from "./pages/CitiesPage.jsx";
 
 function App() {
 
-
   return (
-    <>
-    <h1 className="text-red-700 text-6xl"> hello Mr Stratup </h1>
-    </>
-  )
+    <div className="min-h-screen bg-gray-100">
+
+      <h1 className="text-4xl font-bold text-center py-6">
+        Pilgrim Guide
+      </h1>
+
+      <CitiesPage />
+
+    </div>
+  );
+
 }
 
-export default App
+export default App;
