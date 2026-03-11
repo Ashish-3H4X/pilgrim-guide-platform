@@ -13,7 +13,7 @@ const StaySchema = new mongoose.Schema(
       type: String
     },
 
-    price: Number,
+    price: String,
 
     location: {
       lat: Number,
