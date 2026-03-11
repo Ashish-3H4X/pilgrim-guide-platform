@@ -7,7 +7,7 @@ import templeRoutes from "./src/routes/templeRoutes.js";
 import placeRoutes from "./src/routes/placeRoutes.js";
 import foodRoutes from "./src/routes/foodRoutes.js"
 import stayRoutes from "./src/routes/stayRoutes.js"
-
+import { errorHandler } from "./src/middleware/errorMiddleware.js";
 dotenv.config();
 
 const app = express();
@@ -37,3 +37,4 @@ app.listen(PORT, () => {
 });
 
 connectDB();
+app.use(errorHandler);
