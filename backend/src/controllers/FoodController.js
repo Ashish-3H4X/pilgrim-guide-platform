@@ -1,20 +1,32 @@
 import Food from "../models/Food.js";
+import asyncHandler from "../utils/asyncHandler.js";
 
-export const getFoods = async (req, res) => {
-  try {
-    const foods = await Food.find().populate("city");
-    res.json(foods);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+export const getFoods = asyncHandler(async (req, res) => {
 
-export const createFood = async (req, res) => {
-  try {
-    const food = new Food(req.body);
-    await food.save();
-    res.json(food);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  const filter = {};
+
+  if (req.query.city) {
+    filter.city = req.query.city;
   }
-};
+
+  const foods = await Food.find(filter).populate("city");
+
+  res.json({
+    success: true,
+    count: foods.length,
+    data: foods
+  });
+
+});
+
+export const createFood = asyncHandler(async (req, res) => {
+
+  const food = new Food(req.body);
+  await food.save();
+
+  res.status(201).json({
+    success: true,
+    data: food
+  });
+
+});
