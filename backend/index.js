@@ -6,6 +6,7 @@ import cityRoutes from "./src/routes/cityRoutes.js"
 import templeRoutes from "./src/routes/templeRoutes.js";
 import placeRoutes from "./src/routes/placeRoutes.js";
 import foodRoutes from "./src/routes/foodRoutes.js"
+import stayRoutes from "./src/routes/stayRoutes.js"
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/api/cities", cityRoutes);
 app.use("/api/temples", templeRoutes);
 app.use("/api/places", placeRoutes);
 app.use("/api/foods" ,  foodRoutes )
+app.use("/api/stays" , stayRoutes)
 
 
 const PORT = process.env.PORT || 5000;
