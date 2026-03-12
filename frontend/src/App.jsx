@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import CitiesPage from "./pages/CitiesPage";
+import CitiesPage from "./pages/CitiesPage.jsx";
 import CityDetails from "./pages/CityDetails";
 
 function App() {
