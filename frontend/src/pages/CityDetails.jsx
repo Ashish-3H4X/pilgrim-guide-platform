@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import PlaceCard from "../components/PlaceCard";
 import API from "../api/api";
 
 function CityDetails() {
@@ -105,12 +106,7 @@ function CityDetails() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {temples.map((temple) => (
-            <div
-              key={temple._id}
-              className="p-4 bg-white shadow rounded-lg hover:shadow-xl transition"
-            >
-              <h4 className="font-semibold text-lg">{temple.name}</h4>
-            </div>
+             <PlaceCard key={temple._id} name={temple.name} />
           ))}
         </div>
       )}
@@ -123,12 +119,7 @@ function CityDetails() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {places.map((place) => (
-            <div
-              key={place._id}
-              className="p-4 bg-white shadow rounded-lg hover:shadow-xl transition"
-            >
-              <h4 className="font-semibold text-lg">{place.name}</h4>
-            </div>
+           <PlaceCard key={place._id} name={place.name} />
           ))}
         </div>
       )}
@@ -141,12 +132,7 @@ function CityDetails() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {stays.map((stay) => (
-            <div
-              key={stay._id}
-              className="p-4 bg-white shadow rounded-lg hover:shadow-xl transition"
-            >
-              <h4 className="font-semibold text-lg">{stay.name}</h4>
-            </div>
+            <PlaceCard key={stay._id} name={stay.name} />
           ))}
         </div>
       )}
@@ -159,12 +145,7 @@ function CityDetails() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {foods.map((food) => (
-            <div
-              key={food._id}
-              className="p-4 bg-white shadow rounded-lg hover:shadow-xl transition"
-            >
-              <h4 className="font-semibold text-lg">{food.name}</h4>
-            </div>
+            <PlaceCard key={food._id} name={food.name} />
           ))}
         </div>
       )}
