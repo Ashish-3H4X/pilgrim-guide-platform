@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PlaceCard from "../components/PlaceCard";
+import CityMap from "../components/CityMap";
 import API from "../api/api";
 
 function CityDetails() {
@@ -73,8 +74,10 @@ function CityDetails() {
         {city ? `${city.name} Guide` : "City Guide"}
       </h2>
 
+<CityMap />
+
       {/* City Summary */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 mt-7">
 
         <div className="bg-white shadow rounded-lg p-4 text-center">
           <p className="text-gray-500 text-sm">Temples</p>
